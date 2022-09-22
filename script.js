@@ -20,9 +20,7 @@ changeBackground()
 async function fetchAPI(url) {
     console.log(url)
     try {
-        let response = await fetch(url, {
-            method: 'GET'
-        })
+        let response = await fetch(url)
         let data = await response.json()
         console.log(data)
         return data
@@ -53,7 +51,7 @@ async function displayResults(e) {
     currentDetail.innerHTML = `
        <div>
              <h1> ${curentDataResponse.name} </h1> <br>
-        <span> ${curentDataResponse.main.temp}deg Celsius</span> <br>
+        <span> ${curentDataResponse.main.temp} deg Celsius</span> <br>
         Condition : ${curentDataResponse.weather[0].main} <br><br>
         ${curentDataResponse.weather[0].description}
         </h2>

@@ -51,7 +51,7 @@ async function displayResults(e) {
     currentDetail.innerHTML = `
        <div>
              <h1> ${curentDataResponse.name} </h1> <br>
-        <span> ${curentDataResponse.main.temp} deg Celsius</span> <br>
+        <span> ${curentDataResponse.main.temp}K</span> <br>
         Condition : ${curentDataResponse.weather[0].main} <br><br>
         ${curentDataResponse.weather[0].description}
         </h2>

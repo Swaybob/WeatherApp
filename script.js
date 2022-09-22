@@ -33,14 +33,14 @@ async function displayResults(e) {
 
     e.preventDefault()
     let searchValue = document.getElementById('search-box').value
-    let url = `http://api.openweathermap.org/geo/1.0/direct?q=${searchValue}&appid=${key}`
+    let url = `https://api.openweathermap.org/geo/1.0/direct?q=${searchValue}&appid=${key}`
     let geoDataResponse = await fetchAPI(url)
 
     console.log(geoDataResponse)
     console.log
     let long = geoDataResponse[0].lon
     let lat = geoDataResponse[0].lat
-    let currentWeatherUrl = `http://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${long}&appid=${key}`
+    let currentWeatherUrl = `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${long}&appid=${key}`
     let curentDataResponse = await fetchAPI(currentWeatherUrl)
 
     let currentDetail = document.createElement('div')
